@@ -1,0 +1,88 @@
+$gray: #cacdcd;
+
+.total {
+  display: flex;
+  padding: 24px 12px 24px 12px;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+  background-color: black;
+  color: $gray;
+  font-size: 36px;
+  font-weight: bold;
+
+  .total__items {
+    font-size: 24px;
+  }
+}
+
+.items {
+  display: flex;
+  background-color: $gray;
+  flex-direction: column;
+  gap: 24px;
+  .item {
+    border-top: 4px solid black;
+    position: relative;
+    .item__info {
+      display: grid;
+      padding: 24px 12px 24px 12px;
+      grid-template-columns: repeat(2, 1fr);
+
+      .item__info-col {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        &:nth-child(2) {
+          align-items: flex-end;
+        }
+
+        .item__total-price {
+          font-size: 36px;
+          font-weight: bold;
+        }
+
+        .item__piece-price {
+          font-size: 24px;
+        }
+      }
+
+      .item__title {
+        font-size: 48px;
+        font-weight: bold;
+      }
+
+      .item__subtitle {
+        font-size: 24px;
+      }
+    }
+
+    .item__specs {
+      border-top: 4px solid black;
+      border-bottom: 4px solid black;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 160px);
+      .spec {
+        display: flex;
+        flex-direction: column;
+        padding: 24px;
+        justify-content: center;
+        font-weight: bold;
+        text-transform: uppercase;
+        &:last-child {
+          border-left: 4px solid black;
+        }
+      }
+    }
+
+    .item__photo {
+      position: absolute;
+      width: 30%;
+      height: 60%;
+      border: 4px solid black;
+      right: 12px;
+      bottom: 0px;
+      object-fit: cover;
+    }
+  }
+}
