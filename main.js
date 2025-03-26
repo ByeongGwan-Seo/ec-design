@@ -1,10 +1,19 @@
+import "./styles/reset.scss";
+import "./styles/global.scss";
+import "./styles/cart-style.scss";
+
 document.querySelectorAll(".screen2-root").forEach((el) => {
-  fetch("/components/screen2.html")
-    .then((res) => res.text())
+  fetch(`${import.meta.env.BASE_URL}components/screen2.html`)
+    .then((res) => {
+      if (!res.ok) throw new Error(`HTTP error! ${res.status}`);
+      return res.text();
+    })
     .then((html) => {
       el.innerHTML = html;
     })
-    .catch((err) => console.error("Error loading Screen2:", err));
+    .catch((err) => {
+      console.error("❌ Failed to load screen2.html:", err);
+    });
 });
 
 let isScrolling = false;
