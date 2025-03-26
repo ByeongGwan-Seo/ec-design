@@ -1,5 +1,5 @@
 document.querySelectorAll(".screen2-root").forEach((el) => {
-  fetch("/components/Screen2.html")
+  fetch("/components/screen2.html")
     .then((res) => res.text())
     .then((html) => {
       el.innerHTML = html;
@@ -32,5 +32,5 @@ window.addEventListener("wheel", (e) => {
 
   setTimeout(() => {
     isScrolling = false;
-  }, 1000); // 중복 휠 입력 방지
+  }, 1000);
 });
